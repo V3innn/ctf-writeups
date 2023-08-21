@@ -18,7 +18,7 @@ so are not able to get the flag. That's where the ret2win attack comes (obviousl
 The first thing that we want to do is to crash the program to be able to control it
 we found the the offset to be 40 with pwndbg
 
-We need a ret gadget to return to cause it's a x64 bit binary and not x32 
+We need a ret gadget to return to cause it's a x64 bit binary and not x32
 We found it with ropper
 ![Alt Text](ret_gadget.png)
 
