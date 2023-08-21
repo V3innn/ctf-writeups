@@ -26,4 +26,5 @@ After these we wrote a simply python script with pwntools and we took the flag!
 ![Alt Text](successful_pwntools_exploit.png)
 
 We even write a manual exploit in terminal using python2 that has a lot of fun.
+![Alt Text](python2_manualexploit.png)
 ![Alt Text](successful_manualexploit.png)
