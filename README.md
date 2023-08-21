@@ -2,8 +2,6 @@
 
 Feel free to explore the writeups organized by challenge platforms:
 
-## Folders
-
 ### [HackTheBox](HackTheBox)
 This folder contains writeups for challenges from the HackTheBox platform. HackTheBox is a popular online platform that provides a variety of realistic and simulated hacking challenges. The writeups here will walk you through the process of solving these challenges step by step.
 
