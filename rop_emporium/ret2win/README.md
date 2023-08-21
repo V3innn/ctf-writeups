@@ -12,7 +12,7 @@ which it prints the flag when it be called
 ![Alt Text](ret2win_func.png)
 
 The problem here it is that the ret2win() func, is never called by the main
-so are not abel to get the flag. That's where the ret2win attack comes (obviously).
+so are not able to get the flag. That's where the ret2win attack comes (obviously).
 
 ## Exploit
 The first thing that we want to do is to crash the program to be able to control it
@@ -27,8 +27,3 @@ After these we wrote a simply python script with pwntools and we took the flag!
 
 We even write a manual exploit in terminal using python2 that has a lot of fun.
 ![Alt Text](successful_manualexploit.png)
-
-
-
-
-
