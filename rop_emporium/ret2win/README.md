@@ -1,6 +1,6 @@
 # ret2win 
 
-This challenge is a easy buffer overflow attack.
+This challenge is an easy buffer overflow attack.
 
 ## Basic file checks
 The NX is enabled, so we can't execute code in the stack to do a shellcode attack 
