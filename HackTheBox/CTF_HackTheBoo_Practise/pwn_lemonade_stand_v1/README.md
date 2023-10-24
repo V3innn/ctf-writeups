@@ -99,6 +99,33 @@ void save_creds(void)
   return;
 }
 ```
+We also found a function that is never been called and it will print the flag if somehow we achieve it.
+That's our goal.
+
+```c
+
+void grapes(void)
+
+{
+  ssize_t sVar1;
+  char local_d;
+  int local_c;
+  
+  local_c = open("./flag.txt",0);
+  if (local_c < 0) {
+    perror("\nError opening flag.txt, please contact an Administrator.\n");
+                    /* WARNING: Subroutine does not return */
+    exit(1);
+  }
+  while( true ) {
+    sVar1 = read(local_c,&local_d,1);
+    if (sVar1 < 1) break;
+    fputc((int)local_d,stdout);
+  }
+  close(local_c);
+  return;
+}
+```
 
 ## Exploit
 
