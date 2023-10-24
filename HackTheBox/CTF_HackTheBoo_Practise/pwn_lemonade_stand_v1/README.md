@@ -17,6 +17,6 @@ what the binary is actually doing and what funtions are called.\
 
 We saw that the main is calling two funcrions buy_normal()" and buy_large().\
 We navigate to them and we saw that both of them they calling a save_creds() func.\
-![Alt Text](img/buy_large.png)\
+![Alt Text](img/buy_large().png)\
 
 
