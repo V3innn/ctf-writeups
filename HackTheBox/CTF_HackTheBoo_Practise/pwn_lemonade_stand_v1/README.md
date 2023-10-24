@@ -36,7 +36,22 @@ void main(void)
 ```
 
 We saw that the main is calling two funcrions buy_normal()" and buy_large().\
-We navigate to them and we saw that both of them they calling a save_creds() func.\
-![Alt Text](img/buy_large().png) 
+We navigate to them and we saw that both of them they calling a save_creds() func.
+```c
+void buy_large(void)
+
+{
+  if (COINS < 6) {
+    error("You don\'t have enough coins!");
+    save_creds();
+  }
+  else {
+    printf("\n%s[+] Enjoy your large lemonade!\n%s",&DAT_0040101e,&DAT_00400c88);
+    COINS = COINS - 5;
+  }
+  return;
+}
+```
 
 This is where the interesting thing starts.
+We
