@@ -12,7 +12,7 @@ The NX is also enabled, so that means we can't stored input or data cannot be ex
 
 We used Ghidra to disassemble the binary.\
 The first thing that we want to do is to go to Functions section and select the main() to see\
-what the binary is actually doing and what funtions are called.\
+what the binary is actually doing and what funtions are called.
 ```c
 void main(void)
 
