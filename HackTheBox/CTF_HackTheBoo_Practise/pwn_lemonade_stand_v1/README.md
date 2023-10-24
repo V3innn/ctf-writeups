@@ -35,6 +35,7 @@ void main(void)
 }
 ```
 
+
 We saw that the main is calling two funcrions buy_normal()" and buy_large().\
 We navigate to them and we saw that both of them they calling a save_creds() func.
 ```c
@@ -54,4 +55,42 @@ void buy_large(void)
 ```
 
 This is where the interesting thing starts.
-We
+We 
+```c
+
+void save_creds(void)
+
+{
+  long lVar1;
+  undefined8 buffer;
+  undefined8 local_40;
+  undefined8 local_38;
+  undefined8 local_30;
+  undefined8 local_28;
+  undefined8 local_20;
+  undefined8 local_18;
+  undefined8 local_10;
+  
+  local_28 = 0;
+  local_20 = 0;
+  local_18 = 0;
+  local_10 = 0;
+  buffer = 0;
+  local_40 = 0;
+  local_38 = 0;
+  local_30 = 0;
+  puts(
+      "\n\nI can give you a free lemonade but I need your information for next time so you can pay m e back!\n"
+      );
+  printf("1. Yes\n2. No thanks\n\n>> ");
+  lVar1 = read_num();
+  if (lVar1 == 1) {
+    printf("\nPlease tell me your name: ");
+    read(0,&local_28,30);
+    printf("\nPlease tell me your surname: ");
+    read(0,&buffer,74);
+    puts("Thanks a lot! Here is your lemonade!\n");
+  }
+  return;
+}
+```
