@@ -80,7 +80,7 @@ void save_creds(void)
   local_20 = 0;
   local_18 = 0;
   local_10 = 0;
-  buffer = 0;
+  local_48 = 0;
   local_40 = 0;
   local_38 = 0;
   local_30 = 0;
