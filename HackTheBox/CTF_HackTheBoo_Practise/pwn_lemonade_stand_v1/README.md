@@ -54,15 +54,20 @@ void buy_large(void)
 }
 ```
 
-This is where the interesting thing starts.
-We 
+This is where the interesting thing starts. \
+We see that we have a buffer overflow in the local_48 variable cause the size of it is 64 bytes and read can take 74 bytes
+
+```assembly 
+        00400ac7 48 8d 45 c0     LEA        RAX=>local_48,[RBP + -0x40]
+```
+
 ```c
 
 void save_creds(void)
 
 {
   long lVar1;
-  undefined8 buffer;
+  undefined8 local_48;
   undefined8 local_40;
   undefined8 local_38;
   undefined8 local_30;
@@ -88,7 +93,7 @@ void save_creds(void)
     printf("\nPlease tell me your name: ");
     read(0,&local_28,30);
     printf("\nPlease tell me your surname: ");
-    read(0,&buffer,74);
+    read(0,&local_48,74);
     puts("Thanks a lot! Here is your lemonade!\n");
   }
   return;
