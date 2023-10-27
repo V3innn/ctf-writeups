@@ -133,7 +133,7 @@ First we want to find the offset.\
 We will use pwndbg for this, to create a pattern known as De Bruijn Sequences to fill the padding for the buffer.
 The pwntools calculate the entire 8 digits and found the offset to be 64, but we only care for the first 4 bytes so it will be 64 + 4 * 2 = 72 bytes
 
-```shell
+```assembly
 >> 1                                                                                         
                                                                                              
 Please tell me your name: leo                                                                
