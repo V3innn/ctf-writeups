@@ -216,6 +216,6 @@ p.send(payload)
 success(p.recvall())
 ```
 
-And we successfully did it!
+And we successfully pwn it!
 
 ![Alt Text](img/flag.png)
