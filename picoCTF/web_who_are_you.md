@@ -1,17 +1,21 @@
-## writeup for web_Who_are_you?
+# Writeup for `web_Who_are_you?`
 
-# first it wanted to change the browser, so we went to burpsuite and we change
-  the User-Agent to: "User-Agent: PicoBrowser"
+- First, it wanted to change the browser, so we used Burp Suite and modified the User-Agent to: 
+  `User-Agent: PicoBrowser`
 
-# then it wanted from another site, so we add the Referer to: "Referer: mercury.picoctf.net:1270"
+- Then, it needed information from another site, so we added the Referer: 
+  `Referer: mercury.picoctf.net:1270`
 
-# then it said that the site only was working from back to 2018 so we add the Date to:
-  "Date: Mon, 21 Feb 2018 12:34:56 GMT"
+- Next, it mentioned that the site only worked from 2018 and earlier, so we added the Date: 
+  `Date: Mon, 21 Feb 2018 12:34:56 GMT`
 
-# Then it said that they cant trust us so we add DNT (Do Not Track header) to: "DNT: 1"
+- Following that, it expressed distrust, so we included DNT (Do Not Track header): 
+  `DNT: 1`
 
-# then it said tit only accepts from sweden, so we search to goofle to find some public sweden Ip's
-  and the add the X-Forwarded-For to: "X-Forwarded-For: 102.177.146.0"
+- Subsequently, it stated that it only accepts requests from Sweden. We searched on Google to find some public Swedish IPs and added the X-Forwarded-For header: 
+  `X-Forwarded-For: 102.177.146.0`
 
-# And for the last it says we are in Sweden but we dont speak Swedish, so we change the
-  Accept-Language to: "Accept-Language: sv-sv,en;q=0.5" and finally we get the flag :)
+- Lastly, it noted that we are in Sweden but don't speak Swedish, so we changed the Accept-Language to: 
+  `Accept-Language: sv-sv,en;q=0.5`
+  
+And finally, we obtained the flag! :)
