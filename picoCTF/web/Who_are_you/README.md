@@ -38,7 +38,7 @@ Date: Mon, 21 Feb 2018 12:34:56 GMT
   ![Alt Text](img/fifth_phase.png)
 
 - Lastly, it noted that we are in Sweden but don't speak Swedish, so we changed the Accept-Language to: 
-  ```htpp
+  ```http
   Accept-Language: sv-sv,en;q=0.5
   ```
 
