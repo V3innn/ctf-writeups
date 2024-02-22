@@ -1,4 +1,5 @@
-# Writeup for `web_Who_are_you?`
+##Writeup for `web_Who_are_you?`
+# Very easy web explotation challenge from PicoCTF
 
 - First, it wanted to change the browser, so we used Burp Suite and modified the User-Agent to: 
   `User-Agent: PicoBrowser`
