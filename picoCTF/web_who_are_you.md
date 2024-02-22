@@ -1,7 +1,10 @@
-##Writeup for `web_Who_are_you?`
-# Very easy web explotation challenge from PicoCTF
+# Writeup for web_Who_are_you?
 
-- First, it wanted to change the browser, so we used Burp Suite and modified the User-Agent to: 
+This is an easy web explotation challenge
+
+## First look at the site's page
+
+First, it wanted to change the browser, so we used Burp Suite and modified the User-Agent to: 
   `User-Agent: PicoBrowser`
 
 - Then, it needed information from another site, so we added the Referer: 
