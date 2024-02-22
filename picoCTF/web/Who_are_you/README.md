@@ -44,5 +44,5 @@ Date: Mon, 21 Feb 2018 12:34:56 GMT
 
 And finally, we obtained the flag! :)
 ![Alt Text](img/final_step_and_got_the_flag.png)
-![Alt Text](img/flag_into_browser.png)
+![Alt Text](img/flag_into_browser1.png)
 
