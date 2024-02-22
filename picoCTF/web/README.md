@@ -3,9 +3,12 @@
 This is an easy web explotation challenge
 
 ## First look at the site's page
+![Alt Text](img/first_site's_pic.png)
 
-First, it wanted to change the browser, so we used Burp Suite and modified the User-Agent to: 
-  `User-Agent: PicoBrowser`
+We see that it wants to use the "official PicoBrowser", so will use Burp Suite and modifie the User-Agent to: 
+  ```html
+  User-Agent: PicoBrowser
+```
 
 - Then, it needed information from another site, so we added the Referer: 
   `Referer: mercury.picoctf.net:1270`
