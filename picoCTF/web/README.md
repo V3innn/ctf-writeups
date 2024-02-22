@@ -5,7 +5,7 @@ This is an easy web explotation challenge
 ## First look at the site's page
 ![Alt Text](img/first_site's_pic.png)
 
-We see that it wants to use the "official PicoBrowser", so will use Burp Suite and modifie the User-Agent to: 
+We see that it wants to use the "official PicoBrowser", so will use Burp Suite to modiy the User-Agent to: 
   ```http
   User-Agent: PicoBrowser
 ```
