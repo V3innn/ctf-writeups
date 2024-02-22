@@ -6,7 +6,7 @@ This is an easy web explotation challenge
 ![Alt Text](img/first_site's_pic.png)
 
 We see that it wants to use the "official PicoBrowser", so will use Burp Suite and modifie the User-Agent to: 
-  ```js
+  ```http
   User-Agent: PicoBrowser
 ```
 
