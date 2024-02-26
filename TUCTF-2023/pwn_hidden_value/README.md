@@ -5,7 +5,8 @@
 Easy
 
 There's a hidden value in this program, can you find it?
-nc chal.tuctf.com 30011```
+nc chal.tuctf.com 30011
+```
 
 ## First Look
 We run the program and that what it looks like:
@@ -13,4 +14,5 @@ We run the program and that what it looks like:
 ──(vein㉿vein)-[~/tuctf/pwn_welcome]
 └─$ ./welcome 
 Enter your name: leo
-Welcome, leo```
+Welcome, leo
+```
