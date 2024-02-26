@@ -12,9 +12,9 @@ def solve_typing_challenge():
 
     try:
         driver.get("https://hacker-typer.tuctf.com")
-        time.sleep(5) # gia na prolavei na anoixei to chrome
+        time.sleep(5) # just to give the browser time to open
 
-        for _ in range(500): # epeidh to 0.1 speed einai polu grhgoro to evala na einai 500 gia ta errors
+        for _ in range(500): # because 0.1 speed is very fast and skips browser requests I change it to 0.5
             input_element = driver.find_element(By.NAME, "word")
             challenge_info = driver.find_element(By.NAME, "word-title").text
             word_to_type = challenge_info.split(":")[-1].strip()
@@ -24,7 +24,7 @@ def solve_typing_challenge():
             input_element.clear()
             input_element.send_keys(word_to_type)
 
-            time.sleep(0.1) # speed ths epomenhs lexhs
+            time.sleep(0.1) # the speed of the next comming word
 
             submit_button = driver.find_element(By.CSS_SELECTOR, "form button[type='submit']")
             submit_button.click()
