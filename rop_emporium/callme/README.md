@@ -68,18 +68,18 @@ void usefulFunction(void)
   exit(1);
 }
 ```
-We open Ghidra and we saw that a pwnme() function is called by the main.
-We see that has a buffer overflow in the local_28 variable cause it's 32 bytes long
+We open Ghidra and we saw that a pwnme() function is called by the main. \
+We see that has a buffer overflow in the local_28 variable cause it's 32 bytes long \
 and the read() takes up to 512 = 0x200
 
 # Exploitation
-Challennge description says that to take the flag we must call
-callme_one(), callme_two() and callme_three() functions in that order, each with the arguments:\
+Challennge description says that to take the flag we must call \
+callme_one(), callme_two() and callme_three() functions in that order, each with the arguments:
 ```text
 0xdeadbeefdeadbeef, 0xcafebabecafebabe, 0xd00df00dd00df00d e.g. callme_one(0xdeadbeefdeadbeef, 0xcafebabecafebabe, 0xd00df00dd00df00d)
 ```
-To achieve this we want some rop gadgets to pop the values into the stack.\
-For our luck, we found a hide funtion inside pwndbg that has the gadgets that we need.\
+To achieve this we want some rop gadgets to pop the values into the stack. \
+For our luck, we found a hide funtion inside pwndbg that has the gadgets that we need. \
 Either way we could found them with ropper.
 ```asm
 ┌──(vein㉿vein)-[~/rop_emporium/callme]
