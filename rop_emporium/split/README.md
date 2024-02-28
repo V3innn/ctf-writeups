@@ -71,7 +71,7 @@ and the read() takes up to 96 = 0x60
 Challeneg description talks about a string that we maybe need to solve it.
 We found it with rabin2 but we also can with Ghidra and with pwndbg.
 It's the "/bin/cat flag.txt"
-```console
+```asm
 ┌──(vein㉿vein)-[~/rop_emporium/split]
 └─$ rabin2 -z split  
 [Strings]
@@ -102,7 +102,7 @@ To achieve this we want a rop gadget to pop it into the stack
 
 So, now we are ready to craft our payload.
 Here is the python script
-```python3
+```python
 #!/usr/bin/env python3
 from pwn import *
 
