@@ -24,7 +24,7 @@ Thank you!
 Exiting
 ```
 The NX is enabled so it prevents running code into the stack, so we can't do a shellcode attack
-```
+
 ## Static Analysis
 
 ```c
