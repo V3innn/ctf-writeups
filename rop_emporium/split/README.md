@@ -11,7 +11,8 @@
     Stack:    No canary found
     NX:       NX enabled
     PIE:      No PIE (0x400000)
-
+```
+```console
 ┌──(vein㉿vein)-[~/rop_emporium/split]
 └─$ ./split     
 split by ROP Emporium
