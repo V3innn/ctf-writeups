@@ -88,7 +88,7 @@ nth paddr      vaddr      len size section type  string
 What we want to do is to navigate to usefulFunction() function and put inside the system()
 the string "/bin/cat flag.txt" to take the flag.
 To achieve this we want a rop gadget to pop it into the stack
-```console
+```asm
 ┌──(vein㉿vein)-[~/rop_emporium/split]
 └─$ ropper -f split --search "pop rdi"
 [INFO] Load gadgets from cache
