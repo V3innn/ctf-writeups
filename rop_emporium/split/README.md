@@ -84,7 +84,7 @@ nth paddr      vaddr      len size section type  string
 4   0x0000083f 0x0040083f 10  11   .rodata ascii Thank you!
 5   0x0000084a 0x0040084a 7   8    .rodata ascii /bin/ls
 0   0x00001060 0x00601060 17  18   .data   ascii /bin/cat flag.txt
-
+```
 What we want to do is to navigate to usefulFunction() function and put inside the system()
 the string "/bin/cat flag.txt" to take the flag.
 To achieve this we want a rop gadget to pop it into the stack
