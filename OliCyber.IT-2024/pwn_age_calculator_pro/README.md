@@ -88,7 +88,7 @@ info(leak)
 raw_input('gdb')
 ```
 
-```sh
+```shell
 ┌──(vein㉿vein)-[~/sec/CTF_OliCyber.IT/pwn_age_calculator_pro]
 └─$ ./exploit.py
 [+] Starting local process '/home/vein/sec/CTF_OliCyber.IT/pwn_age_calculator_pro/age_calculator_pro': pid 50583
