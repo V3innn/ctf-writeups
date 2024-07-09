@@ -1,6 +1,9 @@
-![[../DownUnderCTF_Pic.png]]
-We were given a web application made by a group of students and we have been "hired" to test it how safe actually it is.
+# DownUnderCTF 2024
+## Web - co2 - easy
+![Alt Text](../DownUnderCTF_Pic.png)
 
+## First look
+We were given a web application made by a group of students and we have been "hired" to test it how safe actually it is.
 Started by looking at the source code and we saw in the routes.py a flag variable, so we knew that we were on the right path to look for. 
 
 Some routes that we might want to check them up were:
@@ -47,6 +50,8 @@ This vulnerability called **Python Prototype Pollution**.
 You can read more about this attack from hacktricks that helped me to complete this challenge.
 https://book.hacktricks.xyz/generic-methodologies-and-resources/python/class-pollution-pythons-prototype-pollution
 
+
+## Exploit
 In the CTF I did manually with burp and just intercept the request and inject it there the code, but after the CTF ends I wrote a solver script with the steps of the exploit.
 Here it is:
 
@@ -105,6 +110,7 @@ with Session() as session:
     print("Get flag response:", r.text)
 ```
 
+## Take the flag
 And we got the flag!
 ```sh
 ┌──(vein㉿vein)-[~/sec/DownUnderCTF_2024]
