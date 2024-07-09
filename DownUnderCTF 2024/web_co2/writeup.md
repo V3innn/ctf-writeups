@@ -52,7 +52,7 @@ https://book.hacktricks.xyz/generic-methodologies-and-resources/python/class-pol
 
 
 ## Exploit
-In the CTF I did manually with burp and just intercept the request and inject it there the code, but after the CTF ends I wrote a solver script with the steps of the exploit.
+In the CTF I did manually with burp and just intercept the request and inject it there the payload, but after the CTF ends I wrote a solver script with the steps of the exploit to automate it to the maxinum.
 Here it is:
 
 ```python
