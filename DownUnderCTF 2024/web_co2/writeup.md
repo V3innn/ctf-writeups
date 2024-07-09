@@ -1,5 +1,6 @@
 # DownUnderCTF 2024
-## Web - co2 - easy
+## Web - co2
+`easy`
 ![Alt Text](./DownUnderCTF_Pic.png)
 
 ## First look
