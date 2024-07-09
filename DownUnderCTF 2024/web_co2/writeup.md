@@ -1,4 +1,4 @@
-![[68747470733a2f2f66696c65732e636174626f782e6d6f652f766c6e696b692e706e67.png]]
+![[../DownUnderCTF_Pic.png]]
 We were given a web application made by a group of students and we have been "hired" to test it how safe actually it is.
 
 Started by looking at the source code and we saw in the routes.py a flag variable, so we knew that we were on the right path to look for. 
@@ -106,7 +106,7 @@ with Session() as session:
 ```
 
 And we got the flag!
-```bash
+```sh
 ┌──(vein㉿vein)-[~/sec/DownUnderCTF_2024]
 └─$ python3 exploit.py
 Register status: 200
