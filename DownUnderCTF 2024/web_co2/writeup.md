@@ -1,6 +1,6 @@
 # DownUnderCTF 2024
 ## Web - co2 - easy
-![Alt Text](../DownUnderCTF_Pic.png)
+![Alt Text](./DownUnderCTF_Pic.png)
 
 ## First look
 We were given a web application made by a group of students and we have been "hired" to test it how safe actually it is.
