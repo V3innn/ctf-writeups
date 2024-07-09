@@ -1,8 +1,7 @@
 # DownUnderCTF 2024 
 ## OSINT - Bridget Lives 
 `easy`
-![[68747470733a2f2f66696c65732e636174626f782e6d6f652f766c6e696b692e706e67.png]]
-
+![Alt Text](/img/DownUnderCTF_Pic.png)
 ## Start searching
 
 We were given a photo taken from a building that we must find to submit it as the flag.
