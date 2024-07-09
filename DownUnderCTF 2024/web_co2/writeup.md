@@ -112,7 +112,7 @@ with Session() as session:
 
 ## Take the flag
 And we got the flag!
-```sh
+```console
 ┌──(vein㉿vein)-[~/sec/DownUnderCTF_2024]
 └─$ python3 exploit.py
 Register status: 200
