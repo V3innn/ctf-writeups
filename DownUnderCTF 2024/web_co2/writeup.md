@@ -111,7 +111,7 @@ with Session() as session:
     print("Get flag response:", r.text)
 ```
 
-## Take the flag
+## Grab the flag
 And we got the flag!
 ```shell
 ┌──(vein㉿vein)-[~/sec/DownUnderCTF_2024]
