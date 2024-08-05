@@ -1,5 +1,5 @@
-# n00bzCTf-2024					
-![Alt Text](/b525cca891743bde0dd6216253c5fda9.png)
+# n00bzCTF-2024
+![](attachment/b525cca891743bde0dd6216253c5fda9.png)
 
 ## Challenge's Description 
 
