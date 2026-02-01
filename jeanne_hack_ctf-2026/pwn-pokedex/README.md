@@ -5,8 +5,8 @@
 
 `nc pwn.jeanne-hack-ctf.org 9002`
 
-**category:** `pwn`
-**difficulty**: `medium`
+**category:** `pwn`<br>
+**difficulty**: `medium`<br>
 **libc version:** `2.27`
 
 ## First look
