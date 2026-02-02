@@ -118,6 +118,7 @@ free(0)
 insp3ct(0)
 ```
 This leaks a `main_arena` pointer from the unsorted bin.
+![Alt Text](pokedex_leak_libc.png)
 
 We compute libc base:
 ```python
