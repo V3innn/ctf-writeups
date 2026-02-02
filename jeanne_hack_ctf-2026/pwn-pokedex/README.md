@@ -117,7 +117,7 @@ malloc(1, 1280, 'trash-1')
 free(0)
 insp3ct(0)
 ```
-This leaks a `main_arena` pointer from the unsorted bin.
+This leaks a `main_arena` pointer from the unsorted bin.<br>
 ![Alt Text](pokedex_leak_libc.png)
 
 We compute libc base:
